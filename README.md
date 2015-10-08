@@ -1,5 +1,5 @@
 # tree-directory
-
+[![status](https://travis-ci.org/zoubin/tree-directory.svg?branch=master)](https://travis-ci.org/zoubin/tree-directory) [![version](https://img.shields.io/npm/v/tree-directory.svg)](https://www.npmjs.org/package/tree-directory) [![npm](https://nodei.co/npm/tree-directory.png)](https://www.npmjs.org/package/tree-directory)
 
 Print a directory structure in the tree format
 
