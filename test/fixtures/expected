@@ -1,0 +1,8 @@
+├─ page
+│  ├─ hello
+│  │  └─ index.css
+│  └─ world
+│     ├─ index.css
+│     └─ index.js
+└─ vendor
+   └─ index.js

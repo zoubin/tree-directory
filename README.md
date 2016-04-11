@@ -1,57 +1,67 @@
 # tree-directory
-[![status](https://travis-ci.org/zoubin/tree-directory.svg?branch=master)](https://travis-ci.org/zoubin/tree-directory) [![version](https://img.shields.io/npm/v/tree-directory.svg)](https://www.npmjs.org/package/tree-directory) [![dependencies](https://david-dm.org/zoubin/tree-directory.svg)](https://david-dm.org/zoubin/tree-directory) [![devDependencies](https://david-dm.org/zoubin/tree-directory/dev-status.svg)](https://david-dm.org/zoubin/tree-directory#info=devDependencies)
+[![version](https://img.shields.io/npm/v/tree-directory.svg)](https://www.npmjs.org/package/tree-directory)
+[![status](https://travis-ci.org/zoubin/tree-directory.svg)](https://travis-ci.org/zoubin/tree-directory)
+[![dependencies](https://david-dm.org/zoubin/tree-directory.svg)](https://david-dm.org/zoubin/tree-directory)
+[![devDependencies](https://david-dm.org/zoubin/tree-directory/dev-status.svg)](https://david-dm.org/zoubin/tree-directory#info=devDependencies)
+![node](https://img.shields.io/node/v/tree-directory.svg)
 
 Print a directory structure in the tree format
 
-## Usage
+## Example
+**Directory structure**
+
+```
+example/src
+├── page
+│   ├── hello
+│   │   └── index.css
+│   └── world
+│       ├── index.css
+│       └── index.js
+└── vendor
+    └── index.js
+```
+
+To print all javascript files:
 
 ```javascript
 var tree = require('tree-directory')
 
-var res = tree.sync(__dirname + '/fixtures')
-
-console.log(res.obj)
-console.log(res.basedir)
-console.log(res.str)
+tree(__dirname + '/src', '**/*.js').then(function (res) {
+  console.log(res)
+})
 
 ```
 
-output:
+**Output**
 ```
-⌘ node example/tree.js
-{ a: { b: { c: null }, d: null }, e: { f: null }, g: null }
-/Users/zoubin/usr/src/zoubin/tree-directory/example/fixtures
-├─ a
-│  ├─ b
-│  │  └─ c
-│  └─ d
-├─ e
-│  └─ f
-└─ g
+├─ page
+│  └─ world
+│     └─ index.js
+└─ vendor
+   └─ index.js
 
 ```
 
-### rv = tree(basedir, patterns)
+## tree(root[, patterns])
+Return a promise which resolves to a treeish string
+representing the directory `root` (not including itself).
 
-Return a promise that resolves to the tree info object of `basedir`.
+**root**
 
-#### basedir
+The target directory to format.
 
 Type: `String`
 
-The target directory
+**patterns**
 
-#### patterns
+[Globs](https://github.com/sindresorhus/globby#patterns)
+to match the files to include.
 
 Type: `String`, `Array`
 
 Default: `**/*`
 
-See [globby](https://github.com/sindresorhus/globby#patterns)
-
-#### rv
-
-* `obj`: object representation
-* `str`: string representation
-* `basedir`: the basedir itself
+## tree.sync(root[, patterns])
+Just return the treeish string.
 

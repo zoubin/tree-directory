@@ -1,8 +1,12 @@
 var tree = require('..')
 
-var res = tree.sync(__dirname + '/fixtures')
+console.log('-'.repeat(40))
+console.log(
+  tree.sync(__dirname + '/src')
+)
 
-console.log(res.obj)
-console.log(res.basedir)
-console.log(res.str)
+tree(__dirname + '/src', '**/*.js').then(function (res) {
+  console.log('-'.repeat(40))
+  console.log(res)
+})
 
