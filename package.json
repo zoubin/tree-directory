@@ -1,6 +1,6 @@
 {
   "name": "tree-directory",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Print a directory structure in the tree format",
   "main": "index.js",
   "scripts": {
