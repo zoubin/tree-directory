@@ -3,7 +3,6 @@
 [![status](https://travis-ci.org/zoubin/tree-directory.svg)](https://travis-ci.org/zoubin/tree-directory)
 [![dependencies](https://david-dm.org/zoubin/tree-directory.svg)](https://david-dm.org/zoubin/tree-directory)
 [![devDependencies](https://david-dm.org/zoubin/tree-directory/dev-status.svg)](https://david-dm.org/zoubin/tree-directory#info=devDependencies)
-![node](https://img.shields.io/node/v/tree-directory.svg)
 
 Print a directory structure in the tree format
 
